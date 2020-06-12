@@ -2,6 +2,8 @@ package com.example.hello;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -14,9 +16,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
     }
-    
+
 
     public void onButton1Clicked(View view) {
-        Toast.makeText(getApplicationContext(),"시작 버튼이 눌렸다",Toast.LENGTH_LONG).show();
+        Intent myintent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://m.naver.com"));
+        startActivity(myintent);
+    }
+
+    public void onButton2Clicked(View v){
+        Intent myintent = new Intent(Intent.ACTION_VIEW,Uri.parse("tel:010-2336-4961"));
+        startActivity(myintent);
     }
 }
