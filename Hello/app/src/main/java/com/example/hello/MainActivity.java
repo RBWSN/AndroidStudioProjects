@@ -18,13 +18,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void onButton1Clicked(View view) {
-        Intent myintent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://m.naver.com"));
-        startActivity(myintent);
-    }
-
-    public void onButton2Clicked(View v){
-        Intent myintent = new Intent(Intent.ACTION_VIEW,Uri.parse("tel:010-2336-4961"));
-        startActivity(myintent);
+    public void onMenuButtonClicked(View view) {
+        Intent intent = new Intent(getApplicationContext(),MenuActivity.class);
+        startActivity(intent);
     }
 }
