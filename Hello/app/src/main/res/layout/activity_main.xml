@@ -9,33 +9,63 @@
 
 
     <Button
+        android:id="@+id/btnExit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="이미지 바꾸어 보여주기"
-        android:onClick="onMenuButtonClicked"
-
-        />
-
-    <HorizontalScrollView
-        android:id="@+id/horScrollView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:text="선택"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:gravity="center"/>
+    
+    <RadioGroup
+        android:id="@+id/radioGroup01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         >
-        <ScrollView
-            android:id="@+id/scrollView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/radio1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="남성"
+            android:textColor="#ff55aaff"
+            android:textStyle="bold"
+            android:textSize="24dp"
+            />
+        <RadioButton
+            android:id="@+id/radio2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="여성"
+            android:textColor="#ff55aaff"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            />
+        
+    </RadioGroup>
 
-
-        </ScrollView>
-
-
-    </HorizontalScrollView>
-
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal"
+        android:paddingTop="20dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="하루종일"
+            android:textSize="24dp"
+            android:paddingRight="10dp"
+            android:textColor="#ff55aff"
+            />
+        <CheckBox
+            android:id="@+id/allDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+        
 </LinearLayout>
