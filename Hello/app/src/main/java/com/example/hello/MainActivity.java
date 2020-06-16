@@ -45,15 +45,32 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void changeImg() {
+    public void changeImg() {
+
+
         Resources res= getResources();
-        bitmap = (BitmapDrawable)res.getDrawable(R.drawable.a1233);
+
+
+        if(bitmap == (BitmapDrawable) res.getDrawable(R.drawable.a1233)){
+            bitmap = (BitmapDrawable) res.getDrawable(R.drawable.a1231);
+
+
+        }else{
+            bitmap = (BitmapDrawable) res.getDrawable(R.drawable.a1231);
+
+        }
+        bitmap = (BitmapDrawable) res.getDrawable(R.drawable.a1233);
+
+
+
         int bitmapWidth = bitmap.getIntrinsicWidth();
         int bitmapHeight = bitmap.getIntrinsicHeight();
 
         imageView.setImageDrawable(bitmap);
         imageView.getLayoutParams().width = bitmapWidth;
         imageView.getLayoutParams().height = bitmapHeight;
+
+
 
 
     }
