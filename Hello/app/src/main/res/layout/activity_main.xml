@@ -7,78 +7,52 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-
-    <HorizontalScrollView
-        android:id="@+id/horScrollView"
+    <EditText
+        android:id="@+id/textee"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="385dp"
+        android:textSize="75dp"
 
+
+        android:maxLines="10"
+        android:autoSizeMaxTextSize="75dp"
         >
 
-        <ScrollView
-            android:id="@+id/scrollView1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    </EditText>
 
-            <ImageView
-                android:id="@+id/image01"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/a1231"
-                android:visibility="visible"
-                />
 
-        </ScrollView>
+    <TextView
+        android:id="@+id/textv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:layout_gravity="right"
 
-    </HorizontalScrollView>
+
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        >
-        <Button
-            android:text="올리기"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onUp"
-            android:layout_marginLeft="100dp"
-
-            />
+        android:layout_gravity="center_vertical">
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="onButtom"
+            android:layout_marginLeft="75dp"
+            android:onClick="onSend"
+
+            android:text="전송" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:layout_marginLeft="50dp"
-            android:text="내리기" />
+            android:text="닫기" />
 
     </LinearLayout>
-
-
-
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/horScrollView2"
-        >
-
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
-
-        <ImageView
-            android:id="@+id/image02"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/a1231"
-            android:visibility="invisible"/>
-
-    </ScrollView>
-
-    </HorizontalScrollView>
 
 
 </LinearLayout>
