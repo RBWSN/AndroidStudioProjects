@@ -8,64 +8,77 @@
     tools:context=".MainActivity">
 
 
-    <Button
-        android:id="@+id/btnExit"
-        android:layout_width="wrap_content"
+    <HorizontalScrollView
+        android:id="@+id/horScrollView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="선택"
-        android:textSize="24dp"
-        android:textStyle="bold"
-        android:gravity="center"/>
-    
-    <RadioGroup
-        android:id="@+id/radioGroup01"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
+
         >
-        <RadioButton
-            android:id="@+id/radio1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="남성"
-            android:textColor="#ff55aaff"
-            android:textStyle="bold"
-            android:textSize="24dp"
-            />
-        <RadioButton
-            android:id="@+id/radio2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="여성"
-            android:textColor="#ff55aaff"
-            android:textSize="24dp"
-            android:textStyle="bold"
-            />
-        
-    </RadioGroup>
+
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/image01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/a1231"
+                android:visibility="visible"
+                />
+
+        </ScrollView>
+
+    </HorizontalScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical|center_horizontal"
-        android:paddingTop="20dp"
+
         >
-        <TextView
+        <Button
+            android:text="올리기"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="하루종일"
-            android:textSize="24dp"
-            android:paddingRight="10dp"
-            android:textColor="#ff55aff"
+            android:onClick="onUp"
+            android:layout_marginLeft="100dp"
+
             />
-        <CheckBox
-            android:id="@+id/allDay"
+
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            />
+            android:onClick="onButtom"
+            android:layout_marginLeft="50dp"
+            android:text="내리기" />
+
     </LinearLayout>
-        
+
+
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/horScrollView2"
+        >
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <ImageView
+            android:id="@+id/image02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/a1231"
+            android:visibility="invisible"/>
+
+    </ScrollView>
+
+    </HorizontalScrollView>
+
+
 </LinearLayout>
