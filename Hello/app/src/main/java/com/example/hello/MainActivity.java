@@ -1,5 +1,6 @@
 package com.example.hello;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -11,19 +12,35 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextSwitcher;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    public static final int REQUEST_CODE_MENU = 101; // 다른 액티비티를 띄우기 위한 요청코드 정의
 
-EditText text;
 
+    @Override // 재정의 메소드 코드 번호 식별
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
+        if(requestCode == REQUEST_CODE_MENU){
+            Toast.makeText(getApplicationContext(),"onActivityReslut 메소드 호출됨 요청코드 "+requestCode+" , " +
+                    "결과코드 : "+resultCode,Toast.LENGTH_LONG).show();
+            if(resultCode == RESULT_OK){
+                String name = data.getExtras().getString("name"); //  키의 값 가져오기
+                Toast.makeText(getApplicationContext(),"응답으로 전달된 name : "+ name,Toast.LENGTH_LONG).show();
+            }
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,47 +48,20 @@ EditText text;
         setContentView(R.layout.activity_main);
 
 
+        Button button = (Button)findViewById(R.id.button2);
 
-        text = (EditText) findViewById(R.id.textee); // 에디트 텍스트 연결
-
-        text.addTextChangedListener(new TextWatcher() {
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),MenuActivity.class); // 메뉴 액티비티 띄우기
+                startActivityForResult(intent,REQUEST_CODE_MENU); // 액티비티 시작과 요청코드 넣기기 가져와야할 값이있으면 ForResult
 
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                //에디터 텍스트가 변경되었을때 작동하는 리스너
-
-                int edittext = text.getText().length();
-                String to = Integer.toString(edittext);
-
-                TextView textView;
-                textView = findViewById(R.id.textv);
-                textView.setText(to+"  /  80");
-
-
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
+           }
         });
-
 
 
 
     }
 
-   public void onSend(View view){
-       text = (EditText)findViewById(R.id.textee);
-        String messageall = text.getText().toString();
-
-        Toast.makeText(this.getApplicationContext(),messageall ,Toast.LENGTH_LONG).show();
-
-   }
 
 }
